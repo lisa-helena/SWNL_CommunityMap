@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Map Guide</title>
+    <style>
+        /* Font and color scheme */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        h1 {
+            color: #1a2332;
+            font-weight: 700;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dfe6e9;
+            padding-bottom: 10px;
+            font-style: normal;
+        }
+
+        h2 {
+            color: #1a2332;
+            font-weight: 600;
+            font-size: 1.6em;
+            margin-top: 30px;
+            font-style: normal;
+        }
+
+        h3 {
+            color: #114c70;
+            font-weight: 450;
+            font-size: 1.2em;
+            margin-top: 25px;
+            font-style: italic;
+            cursor: pointer;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        h3::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            font-size: 0.8em;
+            transition: transform 0.2s;
+        }
+
+        h3.expanded::before {
+            content: "▼";
+        }
+
+        h4 {
+            color: #1a2332;
+            font-weight: 450;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1em;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        em {
+            font-style: italic;
+            color: #1a2332;
+            font-weight: 500;
+        }
+
+        strong {
+            font-weight: 700;
+            color: #1a2332;
+        }
+
+        /* Image styling */
+        .screenshot {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #dfe6e9;
+            border-radius: 2px;
+            padding: 5px;
+            margin: 15px 0;
+        }
+
+        /* Content sections */
+        .content-section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        /* Collapsible content for h3 */
+        .h3-content {
+            max-height: 1000px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .h3-content.collapsed {
+            max-height: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Community Map Guide</h1>
+
+    <div class="content-section">
+        <h2>1. How to <em>read</em> and <em>navigate</em> the map</h2>
+        <p>This part is meant to help you use the map. What should you see, what it means and how to use its functionalities.</p>
+
+        <h3>What you see first</h3>
+        <div class="h3-content">
+            <img src="images/FirstView.png" alt="Map Screenshot" class="screenshot">
+            <p>This is your browser's view</p>
+            <h4>Legend and Caption</h4>
+            <h4>Zooming in</h4>
+        </div>
+
+        <h3>Adding or removing layers from the view</h3>
+        <div class="h3-content">
+            <!-- Add content here -->
+        </div>
+
+        <h3>Filtering</h3>
+        <div class="h3-content">
+            <!-- Add content here -->
+        </div>
+
+        <h3>Other tools</h3>
+        <div class="h3-content">
+            <h4>Search Location</h4>
+            <h4>Changing the basemap</h4>
+            <h4>Center map on your location</h4>
+            <h4>Measure distances</h4>
+            <h4>Share and Download</h4>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>2. How to <em>modify</em> and <em>add</em> to the map</h2>
+        <p>To contribute, click the <strong>Edit</strong> button and follow the prompts. <em>New locations</em> can be added by dropping a pin and filling out the details.</p>
+        <img src="screenshot2.png" alt="Editing Map Screenshot" class="screenshot">
+    </div>
+
+    <div class="content-section">
+        <h2>3. Adding other types of information: <em>becoming editor</em></h2>
+        <p>To become an editor, <strong>contact the admin team</strong> via the form linked below. Editors can add <em>custom layers</em> and manage user submissions.</p>
+        <img src="screenshot3.png" alt="Editor Access Screenshot" class="screenshot">
+    </div>
+
+    <script>
+        // Toggle collapsible h3 sections
+        document.querySelectorAll('h3').forEach(header => {
+            header.nextElementSibling.classList.add('collapsed');
+            header.addEventListener('click', () => {
+                header.nextElementSibling.classList.toggle('collapsed');
+                header.classList.toggle('expanded');
+            });
+        });
+    </script>
+</body>
+</html>
