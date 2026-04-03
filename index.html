@@ -196,14 +196,18 @@
     </div>
 
     <script>
-        // Toggle collapsible h3 sections
-        document.querySelectorAll('h3').forEach(header => {
-            header.nextElementSibling.classList.add('collapsed');
+    document.querySelectorAll('h3').forEach(header => {
+        const content = header.nextElementSibling;
+
+        if (content && content.classList.contains('h3-content')) {
+            content.classList.add('collapsed');
+
             header.addEventListener('click', () => {
-                header.nextElementSibling.classList.toggle('collapsed');
+                content.classList.toggle('collapsed');
                 header.classList.toggle('expanded');
             });
-        });
+        }
+    });
     </script>
 </body>
 </html>
