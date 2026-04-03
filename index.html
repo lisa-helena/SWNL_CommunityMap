@@ -120,11 +120,11 @@
 
         /* Collapsible content for h3 */
         .h3-content {
-            max-height: 1000px;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
+            max-height: none;
         }
-
+        
         .h3-content.collapsed {
             max-height: 0;
         }
@@ -195,16 +195,23 @@
         <img src="screenshot3.png" alt="Editor Access Screenshot" class="screenshot">
     </div>
 
+    
     <script>
     document.querySelectorAll('h3').forEach(header => {
         const content = header.nextElementSibling;
-
+        
         if (content && content.classList.contains('h3-content')) {
-            content.classList.add('collapsed');
+            // Start collapsed
+            content.style.maxHeight = "0px";
 
             header.addEventListener('click', () => {
-                content.classList.toggle('collapsed');
-                header.classList.toggle('expanded');
+                if (content.style.maxHeight === "0px") {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    header.classList.add('expanded');
+                } else {
+                    content.style.maxHeight = "0px";
+                    header.classList.remove('expanded');
+                }
             });
         }
     });
